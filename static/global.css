@@ -1,0 +1,278 @@
+/* Font Imports ---------------------------------------- */
+
+ @font-face {
+	font-family: "Bebas Neue";
+	font-weight: 400;
+	font-style: normal;
+	src:
+		url("/assets/fonts/Bebas-Neue.woff2") format("woff2"),
+		url("/assets/fonts/Bebas-Neue.woff") format("woff");
+	font-display: swap;
+}
+
+
+/* Reset ----------------------------------------------- */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+}
+
+body {
+	/* 3. Add accessible line-height */
+	line-height: 1.2;
+	/* 4. Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+	isolation: isolate;
+}
+
+button {
+	cursor: pointer;
+}
+
+/* Variables ------------------------------------------- */
+
+:root {
+	/* Fonts */
+	--font-heading: "Bebas Neue", sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+
+	/* Font sizes */
+	--font-body-s: 12px;
+	--font-body-m: 16px;
+	--font-body-l: 20px;
+
+	--font-heading-s: 20px;
+	--font-heading-m: 24px;
+	--font-heading-l: 36px;
+
+	/* Colors */
+	--color-background-dark-grey: #272625;
+	--color-background-black: #101010;
+
+	--color-white: #fff;
+	--color-black: #000;
+
+	--color-primary: #E2AB60;
+
+	/* Spacing */
+	--padding-inline: 1rem;
+	--padding-block: 2rem;
+	
+	--spacing-xs: 0.25rem;
+	--spacing-s: 0.5rem;
+	--spacing-m: 1rem;
+	--spacing-l: 2rem;
+	--spacing-xl: 4rem;
+	
+	/* Utils */
+	--border-width: 2px;
+	--border-radius: 0px;
+	--shadow: 0 4px 6px #0000008a;
+}
+
+@media screen and (min-width: 768px) {
+	:root {
+		--padding-inline: 2rem;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	:root {
+		
+		/* Font sizes */
+		--font-body-s: 16px;
+		--font-body-m: 20px;
+		--font-body-l: 24px;
+		
+		--font-heading-s: 24px;
+		--font-heading-m: 36px;
+		--font-heading-l: 64px;
+
+		/* Spacing */
+		--padding-inline: 4rem;
+		--padding-block: 4rem;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	:root {
+		--padding-inline: 6rem;
+
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	:root {
+		--padding-inline: 8rem;
+	}
+}
+
+/* Global Styles --------------------------------------- */
+
+:root {
+	color-scheme: light;
+}
+
+html {
+	overflow-x: hidden;
+	max-width: 100vw;
+	background-color: var(--color-background-dark-grey);
+}
+
+/* * {
+	scrollbar-color: var(--color-pine-2) var(--color-bronze-5);
+}
+
+*::-webkit-scrollbar-track {
+	background-color: var(--color-bronze-5);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--color-pine-2);
+} */
+
+img, button {
+	user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+	font-family: var(--font-body);
+}
+
+/* All heading selections */
+*::selection {
+	color: var(--color-white, #fff);
+	background-color: var(--color-primary);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:visited {
+	color: inherit;
+}
+
+section, footer {
+	padding-inline: var(--padding-inline);
+	padding-block: var(--padding-block);
+}
+
+/* Utilities ------------------------------------------- */
+
+/* Icons */
+span.material-icons {
+	color: var(--color-primary);
+	font-size: 24px;
+}
+
+@media screen and (min-width: 1024px) {
+	span.material-icons {
+		font-size: 32px;
+	}
+}
+
+/* Headings */
+.heading-large {
+	font-family: var(--font-heading);
+	font-size: var(--font-heading-l);
+	margin: 0;
+	line-height: 1;
+}
+
+.heading-small {
+	font-family: var(--font-heading);
+	font-size: var(--font-heading-s);
+	margin: 0;
+	line-height: 1;
+}
+
+.body-small {
+    font-family: var(--font-body);
+    font-size: var(--font-body-s);
+    color: var(--color-white);
+}
+
+.body-regular {
+    font-family: var(--font-body);
+    font-size: var(--font-body-m);
+    color: var(--color-white);
+}
+
+.icon-heading{
+	display: flex;
+	gap: var(--spacing-s);
+}
+
+.icon-heading p {
+	font-family: var(--font-heading);
+	font-size: var(--font-heading-s);
+	color: var(--color-white);
+}
