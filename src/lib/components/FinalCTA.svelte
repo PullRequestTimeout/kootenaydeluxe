@@ -22,14 +22,22 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: var(--spacing-l);
+		gap: var(--spacing-m);
 	}
 
 	div.final-cta-buttons,
 	div.final-cta-content {
 		display: flex;
-		gap: var(--spacing-m);
 		text-align: center;
+	}
+
+	div.final-cta-content {
+		gap: var(--spacing-s);
+	}
+
+	div.final-cta-buttons {
+		gap: var(--spacing-m);
+		margin-top: var(--spacing-s);
 	}
 
 	div.final-cta-content {
@@ -46,6 +54,10 @@
 		div.final-cta-content {
 			text-align: left;
 			align-items: flex-start;
+		}
+
+		div.final-cta-buttons {
+			margin-top: 0;
 		}
 	}
 </style>
