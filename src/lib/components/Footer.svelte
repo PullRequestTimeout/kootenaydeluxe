@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { slide } from "svelte/transition";
+	let cookiesBannerOpen = $state(false);
 	function handleCookies() {
-		// Implement cookie handling logic here
-		alert("Cookie settings will be implemented here.");
+		cookiesBannerOpen = !cookiesBannerOpen;
 	}
 </script>
 
@@ -65,6 +66,17 @@
 		</a>
 	</div>
 </footer>
+{#if cookiesBannerOpen}
+	<div class="cookies-banner" transition:slide={{ duration: 300, axis: "y" }}>
+		<div>
+			<span class="material-icons">cookie</span>
+			<p class="body-regular">
+				We use only essential cookies to improve your experience. By using our site, you agree to our <a href="/privacy-policy">Privacy Policy</a>.
+			</p>
+		</div>
+		<button onclick={() => (cookiesBannerOpen = false)}>Accept</button>
+	</div>
+{/if}
 
 <style>
 	footer {
@@ -72,6 +84,7 @@
 		color: var(--color-white);
 		padding: var(--padding-block) var(--padding-inline);
 	}
+
 	footer * {
 		font-size: var(--font-body-m);
 	}
@@ -109,7 +122,7 @@
 	footer hr {
 		border: none;
 		border-top: var(--border-width) solid var(--color-white);
-		margin: var(--spacing-m) 0;
+		margin: var(--spacing-m) 0 var(--spacing-s) 0;
 	}
 
 	footer div.footer-links div,
@@ -138,6 +151,41 @@
 		flex-direction: row;
 		gap: var(--spacing-m);
 		margin-top: var(--spacing-m);
+	}
+
+	div.cookies-banner {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: transparent;
+		color: var(--color-white);
+		padding: var(--spacing-l) var(--padding-inline);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: var(--spacing-s);
+		backdrop-filter: blur(1rem);
+		z-index: 10000;
+	}
+
+	div.cookies-banner div {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-s);
+	}
+
+	div.cookies-banner p {
+		max-width: 600px;
+	}
+
+	div.cookies-banner button {
+		border: none;
+		color: var(--color-primary);
+		text-decoration: underline;
+		background: none;
+		cursor: pointer;
+		font-weight: bold;
 	}
 
 	@media (hover: hover) {
