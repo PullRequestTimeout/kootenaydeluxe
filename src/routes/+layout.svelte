@@ -1,11 +1,17 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import "material-icons/iconfont/filled.css";
 
 	let { children } = $props();
+
+	import FinalCTA from "$lib/components/FinalCTA.svelte";
+	import Footer from "$lib/components/Footer.svelte";
+	import Nav from "$lib/components/Nav.svelte";
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
-
+<Nav />
 {@render children()}
+<FinalCTA />
+<Footer />
+
+<style>
+</style>
