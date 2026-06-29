@@ -184,6 +184,10 @@ body {
 		background-repeat: repeat;
 }
 
+main {
+	padding-top: 6rem;
+}
+
 html * {
 	color: var(--color-white);
 }
