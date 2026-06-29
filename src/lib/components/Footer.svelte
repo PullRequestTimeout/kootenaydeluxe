@@ -150,9 +150,21 @@
 		footer button.cookies-button:hover {
 			color: var(--color-primary);
 		}
+
+		footer div.footer-social a svg path {
+			transition: fill 0.3s ease;
+		}
+
+		footer div.footer-social a:hover svg path {
+			fill: var(--color-white);
+		}
 	}
 
 	@media (min-width: 1024px) {
+		footer div.footer-title {
+			margin-bottom: var(--spacing-l);
+		}
+
 		footer div.footer-title p {
 			max-width: 42ch;
 			margin-top: var(--spacing-s);
@@ -179,7 +191,7 @@
 		footer div.footer-policy div {
 			display: grid;
 			grid-template-columns: 1fr;
-			gap: var(--spacing-s);
+			gap: var(--spacing-m);
 		}
 
 		footer div.footer-policy-social {
