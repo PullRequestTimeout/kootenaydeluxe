@@ -65,14 +65,16 @@ h6 {
 p {
 	text-wrap: pretty;
 }
-h1,
+
+/*h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	text-wrap: balance;
+	 text-wrap: balance; 
 }
+*/
 
 /*
     9. Create a root stacking context
@@ -176,17 +178,15 @@ html {
 	background-color: var(--color-background-dark-grey);
 }
 
-/* * {
-	scrollbar-color: var(--color-pine-2) var(--color-bronze-5);
+body {
+	background-image: url("/assets/images/texture.png");
+		background-size: 120px 120px;
+		background-repeat: repeat;
 }
 
-*::-webkit-scrollbar-track {
-	background-color: var(--color-bronze-5);
+html * {
+	color: var(--color-white);
 }
-
-*::-webkit-scrollbar-thumb {
-	background-color: var(--color-pine-2);
-} */
 
 img, button {
 	user-select: none;
@@ -199,10 +199,19 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
+	font-family: var(--font-heading);
+	margin: 0;
+	line-height: 1;
+	letter-spacing: 0.1em;
 }
 
 *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
 	font-family: var(--font-body);
+	color: var(--color-white);
+}
+
+p {
+	line-height: 1.4;
 }
 
 /* All heading selections */
@@ -241,38 +250,58 @@ span.material-icons {
 
 /* Headings */
 .heading-large {
-	font-family: var(--font-heading);
 	font-size: var(--font-heading-l);
-	margin: 0;
-	line-height: 1;
 }
 
 .heading-small {
-	font-family: var(--font-heading);
 	font-size: var(--font-heading-s);
-	margin: 0;
-	line-height: 1;
 }
 
 .body-small {
-    font-family: var(--font-body);
     font-size: var(--font-body-s);
-    color: var(--color-white);
 }
 
 .body-regular {
-    font-family: var(--font-body);
     font-size: var(--font-body-m);
-    color: var(--color-white);
 }
 
-.icon-heading{
+.icon-heading {
 	display: flex;
 	gap: var(--spacing-s);
+	align-items: center;
 }
 
 .icon-heading p {
 	font-family: var(--font-heading);
 	font-size: var(--font-heading-s);
 	color: var(--color-white);
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-s);
+	text-align: center;
+}
+
+.hero h1 {
+	color: var(--color-primary);
+	font-size: var(--font-body-m);
+	line-height: 1;
+}
+
+.hero h2 {
+	max-width: 1200px;
+}
+
+.hero p {
+	max-width: 600px;
+}
+
+.hero div {
+	margin-top: var(--spacing-m);
+	display: flex;
+	gap: var(--spacing-m);
+	align-items: center;
 }
