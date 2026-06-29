@@ -10,40 +10,87 @@
 
 	// Destructure props with default values
 	let { href, text = "Button", primary = true, type = "button", onAction }: PrimaryButtonProps = $props();
-
-	//
-	let buttonEl: HTMLAnchorElement | HTMLButtonElement | undefined = $state();
-
-	function getMousePos(event: MouseEvent) {
-		if (!buttonEl) return;
-		const rect = buttonEl.getBoundingClientRect();
-		mousePos = {
-			x: event.clientX - rect.left,
-			y: event.clientY - rect.top
-		};
-	}
-
-	function handleClick(event: MouseEvent) {
-		onAction?.(event);
-	}
-
-	let mousePos = $state({ x: 0, y: 0 });
 </script>
 
 {#if href}
-	<a bind:this={buttonEl} {href} class={primary ? "primary" : "secondary"} onmouseenter={getMousePos} onclick={handleClick}>
-		<span>{text}</span>
-		<div style="--top: {mousePos.y}px; --left: {mousePos.x}px;"></div>
+	<a {href} class={primary ? "primary" : "secondary"}
+		>{text}
+		<span></span>
 	</a>
 {:else}
-	<button bind:this={buttonEl} {type} class={primary ? "primary" : "secondary"} onmouseenter={getMousePos} onclick={handleClick}>
-		<span>{text}</span>
-		<div style="--top: {mousePos.y}px; --left: {mousePos.x}px;"></div>
+	<button class={primary ? "primary" : "secondary"} onclick={onAction} {type}
+		>{text}
+		<span></span>
 	</button>
 {/if}
 
 <style>
 	a,
+	button {
+		border: none;
+		display: block;
+		position: relative;
+		padding: 0.7em 2.4em;
+		font-size: 18px;
+		background: transparent;
+		cursor: pointer;
+		user-select: none;
+		overflow: hidden;
+		color: var(--color-primary);
+		z-index: 1;
+		font-family: inherit;
+		font-weight: 500;
+		width: fit-content;
+		min-width: fit-content;
+		font-family: "Bebas Neue", sans-serif;
+		letter-spacing: 0.1em;
+		font-size: var(--font-body-m);
+	}
+
+	a span,
+	button span {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		z-index: -1;
+		border: 4px solid var(--color-primary);
+	}
+
+	a span::before,
+	button span::before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 8%;
+		height: 500%;
+		background: var(--color-background-dark-grey);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(-60deg);
+		transition: all 0.3s;
+	}
+
+	a:hover span::before,
+	button:hover span::before {
+		transform: translate(-50%, -50%) rotate(-90deg);
+		width: 100%;
+		background: var(--color-primary);
+	}
+
+	a:hover,
+	button:hover {
+		color: var(--color-white);
+	}
+
+	a:active span::before,
+	button:active span::before {
+		background: var(--color-primary);
+	}
+
+	/* a,
 	button {
 		position: relative;
 		display: inline-block;
@@ -115,5 +162,5 @@
 		button.secondary:hover {
 			color: var(--color-white);
 		}
-	}
+	} */
 </style>
