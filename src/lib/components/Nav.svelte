@@ -24,7 +24,7 @@
 			<a href="/services">Services</a>
 			<a href="/work">Work</a>
 			<a href="/contact">Contact</a>
-			<PrimaryButton text="Get a Quote" href="tel:+1234567890" primary />
+			<PrimaryButton text="Get a Quote" href="tel:+12505052754" primary />
 		</nav>
 	{/if}
 </header>
@@ -38,7 +38,7 @@
 		<a href="/services">Services</a>
 		<a href="/work">Work</a>
 		<a href="/contact">Contact</a>
-		<PrimaryButton text="Get a Quote" href="tel:+1234567890" primary />
+		<PrimaryButton text="Get a Quote" href="tel:+12505052754" primary />
 	</nav>
 </header>
 

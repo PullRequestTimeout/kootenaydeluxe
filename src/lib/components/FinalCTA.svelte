@@ -12,7 +12,7 @@
 	</div>
 	<div class="final-cta-buttons">
 		<PrimaryButton text="Get a Quote" href="/contact" primary />
-		<PrimaryButton text="Contact Us" href="tel:+1234567890" />
+		<PrimaryButton primary={false} text="Call Now" href="tel:+12505052754" />
 	</div>
 </section>
 
