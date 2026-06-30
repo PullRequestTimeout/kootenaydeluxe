@@ -4,7 +4,7 @@
 	import { page } from "$app/state";
 
 	let {
-		title = "Kootenay Deluxe Contracting",
+		title = "Kootenay Deluxe Contracting — Reliable Contracting & Electrical Services in Rossland, British Columbia",
 		description = "Construction and electrical contractor serving Rossland and the West Kootenays of British Columbia. Specialising in renovations, new construction, electrical installations, upgrades, and dependable project delivery."
 	}: { title?: string; description?: string } = $props();
 	const image = "/assets/images/og-image.jpg";
