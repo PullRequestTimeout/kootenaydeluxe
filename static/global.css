@@ -294,7 +294,7 @@ span.material-icons {
 
 .hero h1 {
 	color: var(--color-primary);
-	font-size: var(--font-body-m);
+	font-size: var(--font-heading-s);
 	line-height: 1;
 }
 
