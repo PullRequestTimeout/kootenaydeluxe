@@ -154,6 +154,31 @@
 			</div>
 		</div>
 	</section>
+	<section class="stats">
+		<div class="stats-text">
+			<h2 class="heading-large">Backed by Experience, Built on Quality, and Committed to Doing Things Right</h2>
+			<p class="body-regular">
+				Experience matters when choosing a contractor. From construction and renovations to electrical work, our team brings the skills and attention
+				to detail needed to deliver reliable results. We focus on quality workmanship, safe job sites, and clear communication on every project across
+				Rossland and the West Kootenays.
+			</p>
+		</div>
+		<div class="stats-figures">
+			<div class="stat">
+				<h3>10+</h3>
+				<p class="heading-small">Years of Experience</p>
+			</div>
+			<div class="stat">
+				<h3>100+</h3>
+				<p class="heading-small">Projects Completed</p>
+			</div>
+			<div class="stat">
+				<h3>20+</h3>
+				<p class="heading-small">Returning Clients</p>
+			</div>
+		</div>
+	</section>
+	<section class="service-area"></section>
 	<FAQ faqs={homeFaqs} />
 </main>
 
@@ -207,10 +232,75 @@
 			gap: var(--spacing-l);
 		}
 	}
+
 	@media (min-width: 1024px) {
 		section.team {
 			grid-template-columns: 1fr 2fr;
 			gap: var(--spacing-xl);
+		}
+	}
+
+	/* Stats */
+	section.stats {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-m);
+	}
+
+	section.stats div.stats-text {
+		display: grid;
+		gap: var(--spacing-s);
+	}
+
+	section.stats div.stats-figures {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--spacing-m);
+	}
+
+	section.stats div.stats-figures div.stat {
+		display: flex;
+		flex-direction: column;
+		border-bottom: 2px solid var(--color-white);
+		padding-bottom: var(--spacing-m);
+	}
+
+	section.stats div.stats-figures div.stat h3 {
+		font-size: calc(var(--font-heading-l) * 1.5);
+		color: var(--color-primary);
+	}
+	section.stats div.stats-figures div.stat p {
+		font-family: var(--font-heading);
+		letter-spacing: 0.1em;
+	}
+
+	@media (min-width: 640px) {
+		section.stats div.stats-figures {
+			grid-template-columns: repeat(3, 1fr);
+			gap: var(--spacing-l);
+		}
+
+		section.stats div.stats-figures div.stat {
+			border-left: 3px solid var(--color-white);
+			padding-left: var(--spacing-m);
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+
+	@media (min-width: 768px) {
+		section.stats div.stats-text {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--spacing-l);
+		}
+	}
+	@media (min-width: 1024px) {
+		section.stats div.stats-figures {
+			gap: var(--spacing-xl);
+		}
+
+		section.stats div.stats-figures div.stat {
+			padding-left: var(--spacing-l);
 		}
 	}
 </style>
