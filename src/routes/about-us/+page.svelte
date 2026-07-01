@@ -178,7 +178,14 @@
 			</div>
 		</div>
 	</section>
-	<section class="service-area"></section>
+	<section class="service-area">
+		<h2 class="heading-small">Service Area</h2>
+		<h3 class="heading-large">Proudly Serving Rossland and Communities Across the West Kootenays</h3>
+		<p class="body-regular">
+			We've built lasting relationships throughout the region by combining skilled craftsmanship, transparent communication, and dependable service on
+			projects of every size.
+		</p>
+	</section>
 	<FAQ faqs={homeFaqs} />
 </main>
 
@@ -269,6 +276,7 @@
 		font-size: calc(var(--font-heading-l) * 1.5);
 		color: var(--color-primary);
 	}
+
 	section.stats div.stats-figures div.stat p {
 		font-family: var(--font-heading);
 		letter-spacing: 0.1em;
@@ -294,6 +302,7 @@
 			gap: var(--spacing-l);
 		}
 	}
+
 	@media (min-width: 1024px) {
 		section.stats div.stats-figures {
 			gap: var(--spacing-xl);
@@ -302,5 +311,26 @@
 		section.stats div.stats-figures div.stat {
 			padding-left: var(--spacing-l);
 		}
+	}
+
+	/* Service Area */
+	section.service-area {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--spacing-xs);
+	}
+
+	section.service-area h2 {
+		color: var(--color-primary);
+	}
+
+	section.service-area h3 {
+		max-width: 1200px;
+	}
+
+	section.service-area p {
+		max-width: 600px;
 	}
 </style>
