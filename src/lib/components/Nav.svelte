@@ -20,9 +20,9 @@
 	{#if navMenuOpen}
 		<nav transition:slide={{ duration: 300, axis: "x" }}>
 			<a href="/">Home</a>
-			<a href="/about">About</a>
+			<a href="/about-us">About</a>
 			<a href="/services">Services</a>
-			<a href="/work">Work</a>
+			<a href="/our-work">Work</a>
 			<a href="/contact">Contact</a>
 			<PrimaryButton text="Get a Quote" href="tel:+12505052754" primary />
 		</nav>
@@ -34,9 +34,9 @@
 	</a>
 	<nav>
 		<a href="/">Home</a>
-		<a href="/about">About</a>
+		<a href="/about-us">About</a>
 		<a href="/services">Services</a>
-		<a href="/work">Work</a>
+		<a href="/our-work">Work</a>
 		<a href="/contact">Contact</a>
 		<PrimaryButton text="Get a Quote" href="tel:+12505052754" primary />
 	</nav>
