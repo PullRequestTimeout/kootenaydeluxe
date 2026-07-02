@@ -19,12 +19,12 @@
 	</button>
 	{#if navMenuOpen}
 		<nav transition:slide={{ duration: 300, axis: "x" }}>
-			<a href="/">Home</a>
-			<a href="/about-us">About</a>
-			<a href="/services">Services</a>
-			<a href="/our-work">Work</a>
-			<a href="/contact">Contact</a>
-			<PrimaryButton text="Get a Quote" href="tel:+12505052754" primary />
+			<a href="/" onclick={() => (navMenuOpen = false)}>Home</a>
+			<a href="/about-us" onclick={() => (navMenuOpen = false)}>About</a>
+			<a href="/services" onclick={() => (navMenuOpen = false)}>Services</a>
+			<a href="/our-work" onclick={() => (navMenuOpen = false)}>Work</a>
+			<a href="/contact" onclick={() => (navMenuOpen = false)}>Contact</a>
+			<PrimaryButton text="Get a Quote" href="tel:+12505052754" primary onAction={() => (navMenuOpen = false)} />
 		</nav>
 	{/if}
 </header>
