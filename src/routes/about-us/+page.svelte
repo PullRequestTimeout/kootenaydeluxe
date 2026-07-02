@@ -275,6 +275,7 @@
 	section.stats div.stats-figures div.stat h3 {
 		font-size: calc(var(--font-heading-l) * 1.5);
 		color: var(--color-primary);
+		text-shadow: unset;
 	}
 
 	section.stats div.stats-figures div.stat p {
